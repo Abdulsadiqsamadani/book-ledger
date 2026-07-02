@@ -21,7 +21,7 @@
 - [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
-# 📖 portfolio <a name="about-project"></a>
+# 📖 Book-ledger <a name="about-project"></a>
 
 **Book Ledger** A lightweight, client-side book cataloging application engineered with vanilla JavaScript, featuring dynamic DOM manipulation and persistent browser storage.
 
