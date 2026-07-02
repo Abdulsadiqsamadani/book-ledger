@@ -1,7 +1,7 @@
 :root {
     --bg-color: #f8f9fa;
-    --card-bg: #ffffff;
-    --text-color: #333333;
+    --card-bg: #fff;
+    --text-color: #333;
     --border-color: #e0e0e0;
     --primary-color: #2b8a3e; 
     --danger-color: #c92a2a;  
@@ -113,7 +113,7 @@ button {
     background-color: #237032;
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
     body {
         padding: 40px;
     }
