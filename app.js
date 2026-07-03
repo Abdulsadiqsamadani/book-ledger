@@ -5,6 +5,11 @@ const bookForm = document.getElementById('bookForm');
 const titleInput = document.getElementById('titleInput');
 const authorInput = document.getElementById('authorInput');
 
+function updateStorageAndUI() {
+  localStorage.setItem('books', JSON.stringify(bookCollection));
+  displayBooks();
+}
+
 function addBook(title, author) {
   const newBook = {
     id: Date.now(),
@@ -46,11 +51,6 @@ function displayBooks() {
     bookDiv.appendChild(removeBtn);
     booksContainer.appendChild(bookDiv);
   });
-}
-
-function updateStorageAndUI() {
-  localStorage.setItem('books', JSON.stringify(bookCollection));
-  displayBooks();
 }
 
 bookForm.addEventListener('submit', (e) => {
