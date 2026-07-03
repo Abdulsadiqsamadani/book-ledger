@@ -5,6 +5,22 @@ const bookForm = document.getElementById('bookForm');
 const titleInput = document.getElementById('titleInput');
 const authorInput = document.getElementById('authorInput');
 
+function addBook(title, author) {
+  const newBook = {
+    id: Date.now(),
+    title,
+    author,
+  };
+
+  bookCollection.push(newBook);
+  updateStorageAndUI();
+}
+
+function removeBook(id) {
+  bookCollection = bookCollection.filter((book) => book.id !== id);
+  updateStorageAndUI();
+}
+
 function displayBooks() {
   booksContainer.innerHTML = '';
 
@@ -32,22 +48,6 @@ function displayBooks() {
   });
 }
 
-function addBook(title, author) {
-  const newBook = {
-    id: Date.now(),
-    title,
-    author,
-  };
-
-  bookCollection.push(newBook);
-  updateStorageAndUI();
-}
-
-function removeBook(id) {
-  bookCollection = bookCollection.filter((book) => book.id !== id);
-  updateStorageAndUI();
-}
-
 function updateStorageAndUI() {
   localStorage.setItem('books', JSON.stringify(bookCollection));
   displayBooks();
@@ -65,4 +65,5 @@ bookForm.addEventListener('submit', (e) => {
     authorInput.value = '';
   }
 });
+
 displayBooks();
