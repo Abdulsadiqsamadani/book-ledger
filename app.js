@@ -7,6 +7,7 @@ const authorInput = document.getElementById('authorInput');
 
 function updateStorageAndUI() {
   localStorage.setItem('books', JSON.stringify(bookCollection));
+  /* eslint-disable-next-line no-use-before-define */
   displayBooks();
 }
 
