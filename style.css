@@ -2,9 +2,8 @@
   --bg-color: #f8f9fa;
   --card-bg: #fff;
   --text-color: #333;
-  --border-color: #e0e0e0;
-  --primary-color: #2b8a3e;
-  --danger-color: #c92a2a;
+  --border-color: black;
+  --primary-color: #2b8a3e
 }
 
 body {
@@ -15,6 +14,8 @@ body {
     "Segoe UI",
     Roboto,
     sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
   background-color: var(--bg-color);
   color: var(--text-color);
   margin: 0;
@@ -24,24 +25,26 @@ body {
 
 h1,
 h2 {
+  font-size: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: #1a1a1a;
   margin-top: 0;
 }
 
-.main-container {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
 .book-section,
 .form-section {
-  background: var(--card-bg);
-  padding: 20px;
+  background: none;
+  padding: 10px;
   border-radius: 8px;
-  border: 1px solid var(--border-color);
+  width: 100%;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .book-list {
@@ -53,13 +56,17 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px;
-  border: 1px solid var(--border-color);
+  padding: 25px 10px;
+  border: 5px solid var(--border-color);
   margin-bottom: -1px;
 }
 
 .book-item:nth-child(odd) {
-  background-color: #f1f3f5;
+  background-color: #e0e0e0;
+}
+
+.book-item:nth-child(even) {
+  background-color: transparent; 
 }
 
 .book-item span {
@@ -76,12 +83,14 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  width: 50%;
+  justify-content: center;
 }
 
 input {
   padding: 10px;
-  font-size: 1rem;
-  border: 1px solid var(--border-color);
+  font-size: 2rem;
+  border: 5px solid black;
   border-radius: 4px;
   outline: none;
 }
@@ -92,7 +101,7 @@ input:focus {
 
 button {
   padding: 8px 16px;
-  font-size: 0.95rem;
+  font-size: 2rem;
   font-weight: 500;
   border: none;
   border-radius: 4px;
@@ -107,18 +116,17 @@ button {
 }
 
 .remove-btn:hover {
-  background-color: var(--danger-color);
+  background-color: black;
   color: white;
 }
 
 .add-btn {
-  background-color: var(--primary-color);
-  color: white;
-  width: 100%;
+  background-color: none;
+  color: black;
 }
 
 .add-btn:hover {
-  background-color: #237032;
+  background-color: none;
 }
 
 @media (width >= 768px) {
@@ -127,14 +135,39 @@ button {
   }
 
   .main-container {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    align-items: start;
-    gap: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+
+.section-divider {
+    display: flex;
+    flex-direction: column;
+    height: 3px;
+    width: 25%;
+    background-color: black;
   }
 
   .add-btn {
-    width: max-content;
-    align-self: flex-start;
+    align-self: flex-end;
+    border: 5px solid;
   }
+}
+
+.books-list {
+  border: 2px solid #000;
+  margin-bottom: 20px;
+}
+
+.book-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+}
+
+.remove-btn {
+  padding: 4px 10px;
+  border: 2px solid #000;
+  background-color: #fff;
+  cursor: pointer;
 }
