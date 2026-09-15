@@ -3,7 +3,7 @@
   --card-bg: #fff;
   --text-color: #333;
   --border-color: black;
-  --primary-color: #2b8a3e
+  --primary-color: #2b8a3e;
 }
 
 body {
@@ -63,6 +63,7 @@ h2 {
 
 .book-item:nth-child(odd) {
   background-color: #e0e0e0;
+
 }
 
 .book-item:nth-child(even) {
