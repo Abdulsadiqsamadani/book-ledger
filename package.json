@@ -11,6 +11,7 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "eslint": "^10.6.0"
+    "eslint": "^10.6.0",
+    "stylelint-config-standard": "^40.0.0"
   }
 }
