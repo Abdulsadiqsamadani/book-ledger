@@ -29,10 +29,17 @@
         </section>
         <section id="addSection" class="form-section content-section hidden">
             <h2>Add a New Book</h2>
+        <section class="book-section">
+            <h1>All awesome books</h1>
+            <div id="booksContainer" class="book-list"></div>
+        </section>
+        <hr class="section-divider">
+        <section class="form-section">
+            <h2>Add a new book</h2>
             <form id="bookForm" class="form-container">
                 <input type="text" id="titleInput" placeholder="Title" required>
                 <input type="text" id="authorInput" placeholder="Author" required>
-                <button type="submit" class="add-btn">Add Book</button>
+                <button type="submit" class="add-btn">Add</button>
             </form>
         </section>
 
@@ -52,6 +59,6 @@
 
     </div>
 
-    <script src="app.js"></script>
+    <script  type="module" src="app.js"></script>
 </body>
 </html>

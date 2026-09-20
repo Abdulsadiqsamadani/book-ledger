@@ -9,6 +9,22 @@
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --card-bg: #fff;
+  --text-color: #333;
+  --border-color: black;
+  --primary-color: #2b8a3e;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
   background-color: var(--bg-color);
   color: var(--text-color);
   margin: 0;
@@ -30,12 +46,28 @@ h2 {
   gap: 100%;
   max-width: 800px;
   margin: 0 auto;
+  font-size: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #1a1a1a;
+  margin-top: 0;
 }
 
 .book-section,
 .form-section {
   padding: 20px;
   border-radius: 8px;
+  background: none;
+  padding: 10px;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .book-list {
@@ -49,11 +81,18 @@ h2 {
   align-items: center;
   padding: 12px;
   border: 2px solid var(--border-color);
+  padding: 10px 15px;
+  border: 5px solid var(--border-color);
   margin-bottom: -1px;
 }
 
 .book-item:nth-child(odd) {
   background-color: #afb3b6;
+  background-color: #e0e0e0;
+}
+
+.book-item:nth-child(even) {
+  background-color: transparent;
 }
 
 .book-item span {
@@ -71,6 +110,9 @@ h2 {
   flex-direction: column;
   gap: 20px;
   align-items: end;
+  gap: 12px;
+  width: 50%;
+  justify-content: center;
 }
 
 input {
@@ -81,6 +123,10 @@ input {
   border-radius: 4px;
   outline: none;
   width: 80%;
+  font-size: 2rem;
+  border: 5px solid black;
+  border-radius: 4px;
+  outline: none;
 }
 
 input:focus {
@@ -94,6 +140,8 @@ button {
   align-items: end;
   font-size: 0.95rem;
   font-weight: bold;
+  font-size: 2rem;
+  font-weight: 500;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -108,6 +156,7 @@ button {
 
 .remove-btn:hover {
   background-color: var(--danger-color);
+  background-color: black;
   color: white;
 }
 
@@ -206,4 +255,40 @@ button {
   margin-top: 300px;
   width: 100%;
   height: 1rem;
+}
+  background-color: transparent;
+  color: black;
+}
+
+.add-btn:hover {
+  background-color: transparent;
+}
+
+@media (width >= 768px) {
+  body {
+    padding: 40px;
+  }
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .section-divider {
+    display: flex;
+    flex-direction: column;
+    height: 3px;
+    width: 25%;
+    background-color: black;
+  }
+
+  .add-btn {
+    align-self: flex-end;
+    border: 5px solid;
+  }
+}
+
+.books-list {
+  border: 2px solid #000;
+  margin-bottom: 20px;
 }
