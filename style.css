@@ -13,27 +13,27 @@ body {
     color: var(--text-color);
     margin: 0;
     padding: 20px;
+    font-weight: bolder;
     line-height: 1.5;
 }
 
 h1, h2 {
     color: #1a1a1a;
     margin-top: 0;
+    text-align: center;
 }
 
 .main-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    max-width: 1000px;
+    gap: 100%;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 .book-section, .form-section {
-    background: var(--card-bg);
     padding: 20px;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
 }
 
 .book-list {
@@ -46,12 +46,12 @@ h1, h2 {
     justify-content: space-between;
     align-items: center;
     padding: 12px;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     margin-bottom: -1px; 
 }
 
 .book-item:nth-child(odd) {
-    background-color: #f1f3f5;
+    background-color: #afb3b6;
 }
 
 .book-item span {
@@ -67,15 +67,18 @@ h1, h2 {
 .form-container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 20px;
+    align-items: end;
 }
 
 input {
     padding: 10px;
     font-size: 1rem;
-    border: 1px solid var(--border-color);
+    font-weight: bolder;
+    border: 4px solid black;
     border-radius: 4px;
     outline: none;
+    width: 80%;
 }
 
 input:focus {
@@ -84,8 +87,11 @@ input:focus {
 
 button {
     padding: 8px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: bold;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -104,13 +110,10 @@ button {
 }
 
 .add-btn {
-    background-color: var(--primary-color);
-    color: white;
-    width: 100%; 
-}
-
-.add-btn:hover {
-    background-color: #237032;
+    color: black;
+    border: 4px solid black;
+    width: 15%; 
+    align-items: end;
 }
 
 @media (min-width: 768px) {
@@ -118,15 +121,87 @@ button {
         padding: 40px;
     }
 
-    .main-container {
-        display: grid;
-        grid-template-columns: 1.2fr 0.8fr; 
-        align-items: start;
-        gap: 40px;
-    }
 
-    .add-btn {
-        width: max-content; 
-        align-self: flex-start;
-    }
+.hidden {
+    display: none !important;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    border: 4px solid #000;
+    margin-bottom: 10px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+}
+
+.nav-link.active {
+    color: blue;
+    font-weight: bold;
+}
+
+.separator {
+    color: #000;
+}
+
+.date-display {
+    text-align: right;
+    padding: 0 30px;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.contact-section {
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.contact-info {
+    list-style-type: disc;
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+.footer {
+    border: 4px solid #000;
+    align-items: center;
+    display: flex;
+    padding: 15px;
+    text-align: left;
+    margin-top: 300px;
+    width: 100%;
+    height: 1rem;
 }
