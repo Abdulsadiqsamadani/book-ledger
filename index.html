@@ -22,17 +22,18 @@
 
     <p id="date-display" class="date-display"></p>
 
-    <div class="main-container">
+    <main class="main-container">
         <section id="listSection"class="book-section content-section">
             <h1>All Books</h1>
             <div id="booksContainer" class="book-list"></div>
         </section>
+        <hr class="section-divider">
         <section id="addSection" class="form-section content-section hidden">
-            <h2>Add a New Book</h2>
+            <h2>Add a new book</h2>
             <form id="bookForm" class="form-container">
                 <input type="text" id="titleInput" placeholder="Title" required>
                 <input type="text" id="authorInput" placeholder="Author" required>
-                <button type="submit" class="add-btn">Add Book</button>
+                <button type="submit" class="add-btn">Add</button>
             </form>
         </section>
 
@@ -45,13 +46,13 @@
                 <li>Our address: Streetname 22, 84503 City, Country</li>
             </ul>
         </section>
+    </main>
 
-        <footer class="footer">
+    <footer class="footer">
         <p>Copyright ...</p>
     </footer>
 
-    </div>
 
-    <script src="app.js"></script>
+    <script  type="module" src="app.js"></script>
 </body>
 </html>

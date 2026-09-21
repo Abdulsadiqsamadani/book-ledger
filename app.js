@@ -1,60 +1,7 @@
-/* eslint-disable no-use-before-define */
+import BookCollection from './book-collection.js';
+
 document.addEventListener('DOMContentLoaded', () => {
-  let bookCollection = JSON.parse(localStorage.getItem('books')) || [];
-
-  const booksContainer = document.getElementById('booksContainer');
-  const bookForm = document.getElementById('bookForm');
-  const titleInput = document.getElementById('titleInput');
-  const authorInput = document.getElementById('authorInput');
-
-  function displayBooks() {
-    booksContainer.innerHTML = '';
-
-    if (bookCollection.length === 0) {
-      booksContainer.innerHTML = '<p class="empty-state">No books in your collection yet.</p>';
-      return;
-    }
-
-    bookCollection.forEach((book) => {
-      const bookDiv = document.createElement('div');
-      bookDiv.className = 'book-item';
-
-      const infoDiv = document.createElement('div');
-      infoDiv.innerHTML = `"${book.title}" by <span>${book.author}</span>`;
-
-      const removeBtn = document.createElement('button');
-      removeBtn.className = 'remove-btn';
-      removeBtn.textContent = 'Remove';
-
-      removeBtn.addEventListener('click', () => removeBook(book.id));
-
-      bookDiv.appendChild(infoDiv);
-      bookDiv.appendChild(removeBtn);
-      booksContainer.appendChild(bookDiv);
-    });
-  }
-
-  function addBook(title, author) {
-    const newBook = {
-      id: Date.now(),
-      title,
-      author,
-    };
-
-    bookCollection.push(newBook);
-    updateStorageAndUI();
-  }
-
-  function removeBook(id) {
-    bookCollection = bookCollection.filter((book) => book.id !== id);
-    updateStorageAndUI();
-  }
-
-  function updateStorageAndUI() {
-    localStorage.setItem('books', JSON.stringify(bookCollection));
-    displayBooks();
-  }
-
+  const collection = new BookCollection();
   const navList = document.getElementById('nav-list');
   const navAdd = document.getElementById('nav-add');
   const navContact = document.getElementById('nav-contact');
@@ -90,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     showSection(contactSection, navContact);
   });
+
+
   const displayDate = () => {
     const dateDisplay = document.getElementById('date-display');
     if (dateDisplay) {
@@ -106,21 +55,21 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  bookForm.addEventListener('submit', (e) => {
+  collection.bookForm.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const title = titleInput.value.trim();
-    const author = authorInput.value.trim();
+    const title = collection.titleInput.value.trim();
+    const author = collection.authorInput.value.trim();
 
     if (title && author) {
-      addBook(title, author);
-      titleInput.value = '';
-      authorInput.value = '';
+      collection.addBook(title, author);
+      collection.titleInput.value = '';
+      collection.authorInput.value = '';
 
       showSection(listSection, navList);
     }
   });
 
-  displayBooks();
+  collection.displayBooks();
   displayDate();
 });
