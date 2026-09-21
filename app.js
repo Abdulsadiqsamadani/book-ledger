@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     showSection(contactSection, navContact);
   });
 
-
   const displayDate = () => {
     const dateDisplay = document.getElementById('date-display');
     if (dateDisplay) {
