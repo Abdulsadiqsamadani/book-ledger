@@ -7,14 +7,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header class="header">
+        <a href="#" class="logo">Awesome Books</a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#" id="nav-list" class="nav-link active">List</a></li>
+                <li class="separator">|</li>
+                <li><a href="#" id="nav-add" class="nav-link">Add new</a></li>
+                <li class="separator">|</li>
+                <li><a href="#" id="nav-contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <div class="main-container">
-        <section class="book-section">
-            <h1>All awesome books</h1>
+    <p id="date-display" class="date-display"></p>
+
+    <main class="main-container">
+        <section id="listSection"class="book-section content-section">
+            <h1>All Books</h1>
             <div id="booksContainer" class="book-list"></div>
         </section>
         <hr class="section-divider">
-        <section class="form-section">
+        <section id="addSection" class="form-section content-section hidden">
             <h2>Add a new book</h2>
             <form id="bookForm" class="form-container">
                 <input type="text" id="titleInput" placeholder="Title" required>
@@ -22,7 +36,22 @@
                 <button type="submit" class="add-btn">Add</button>
             </form>
         </section>
-    </div>
+
+        <section id="contactSection" class="content-section hidden">
+            <h2>Contact information</h2>
+            <p>Do you have any questions or you just want to say "Hello"? <br>You can reach out to us!</p>
+            <ul class="contact-info">
+                <li>Our e-mail: mail@mail.com</li>
+                <li>Our phone number: 0044123456789</li>
+                <li>Our address: Streetname 22, 84503 City, Country</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Copyright ...</p>
+    </footer>
+
 
     <script  type="module" src="app.js"></script>
 </body>
